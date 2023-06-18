@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Information Card Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            width: 1080px;
+            height: 720px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            transform: rotateY(0deg);
+        }
+
+        .card:hover {
+            transform: rotateY(0deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background: linear-gradient(135deg, #f2f8ce, #a3e9bf, #6ac7a8, #8bc89a);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        .front img {
+            width: 400px;
+            height: 400px;
+        }
+
+        .front h2 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .front p {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .front p span {
+            font-weight: 600;
+        }
+
+        .back {
+            background: linear-gradient(-135deg, #f9f9f9, #d8d6f1, #bcc4e8, #9f99de);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transform: rotateY(180deg);
+        }
+
+        .quote {
+            font-size: 20px;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        blockquote span {
+            font-size: 20px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+    </style>
+    <div class="card">
+        <div class="front">
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://i.imgur.com/IX04cHG.jpg" alt="Profile Image" width="400" height="400">
+                        <h2>Bao Nguyen</h2>
+                        <p>University of Transport and Communications <br> - Campus in Ho Chi Minh City</p>
+                    </td>
+                    <td>
+                        <p><span>Email:</span> giabao.dev@gmail.com</p>
+                        <p><span>Phone:</span> +84 766 741 227</p>
+                        <p><span>Zalo:</span> <a href="https://zalo.me/0563390416">0563 390 416</a></p>
+                        <p><span>Website:</span> <a href="https://giabao.dev">giabao.dev</a></p>
+                        <p><span>Home:</span> Ho Chi Minh City</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="back">
+            <blockquote class="quote">"Your time is limited, don't waste it living someone else's life" - <span class="span">Steve Jobs</span></blockquote>
+            <a href="https://drive.google.com/file/d/1y0GUdePkp1Jm7eoGhB47uiDa-4Si-IlV/view?usp=sharing" class="button">View CV</a>
+        </div>
+    </div>
+    <script>
+        // Get a reference to the card element
+        const card = document.querySelector('.card');
+
+        // Add a click event listener to the card
+        card.addEventListener('click', function() {
+        // Toggle the 'flipped' class to flip the card
+        card.classList.toggle('flipped');
+        });
+    </script>
+</body>
+
+</html>
